@@ -1,7 +1,7 @@
 % Problem 1 
 %xa
 figure(1)
-fplot(@(t) 0*t, [-2,0], 'b'), hold on
+fplot(@(x) 0*x, [-2,0], 'b'), hold on
 fplot(@(x) 1*x, [0,2], 'b')
 fplot(@(x) -x+4, [2,3], 'b')
 fplot(@(x) -2*x+7, [3,4], 'b')
@@ -25,6 +25,7 @@ hold off
 grid on
 legend({'xb(t)'},'Location','southwest')
 
+===================================================================
 %Problem 2
 
 xa(t) = 0 , 	t<-1 or t>3
@@ -37,4 +38,81 @@ xb(t) = 0,		t<-1 or t>3
 	-1.5t+1.5	0<t<2
 	1.5t+1.5,	2<t<3
 
+==================================================================
 %Problem 3 
+
+% g1(t) = xa(t)+xb(t)
+
+g1(t) = 0,		t<-1 or t>3
+	3.5t+3.5,	-1<t<0
+	-2.5t+1.5,	0<t<1
+	-1.5t+2.5,	1<t<2
+	0.5t+1.5,	2<t<3
+
+% g2(t) = xa(t)*xb(t)
+
+g2(t) = 0,		t<-1 or t>3
+	7t^2+6t+3,	-1<t<0
+	1.5t^2-1.5t,	0<t<1
+	-1.5t+1.5,	1<t<2
+	-1.5t^2-1.5,	2<t<3
+
+% g3(t) = 2xa(t)-xb(t)+3
+
+g3(t) = 3,		t<-1 or t>3
+	2.5t+5.5,	-1<t<0
+	-0.5t+1.5,	0<t<1
+	1.5t+2.5,	1<t<2
+	-3.5t+1.5,	2<t<3
+
+
+%g1(t)
+{figure(1)
+fplot(@(x) 0*x, [-2,-1], 'b'), hold on
+fplot(@(x) 3.5*x+3.5, [-1,0], 'b')
+fplot(@(x) -2.5*x+1.5, [0,1], 'b')
+fplot(@(x) -1.5*x+2.5, [1,2], 'b')
+fplot(@(x) 0.5*x+1.5, [2,3], 'b')
+fplot(@(x) 0*x, [3,4], 'b')
+xlim([-2,4])
+hold off
+grid on
+legend({'g1(t)'},'Location','southwest')
+
+%g2(t)
+figure(2)
+fplot(@(x) 0*x, [-2,-1], 'b'), hold on
+fplot(@(x) 7*x.^2+6*x+3, [-1,0], 'b')
+fplot(@(x) 1.5*x.^2-1.5, [0,1], 'b')
+fplot(@(x) -1.5*x+1.5, [1,2], 'b')
+fplot(@(x) -1.5*x.^2-1.5, [2,3], 'b')
+fplot(@(x) 0*x, [3,4], 'b')
+xlim([-2,4])
+hold off
+grid on
+legend({'g2(t)'},'Location','southwest')
+
+%g3(t)
+figure(3)
+fplot(@(x) 3, [-2,-1], 'b'), hold on
+fplot(@(x) 2.5*x+5.5, [-1,0], 'b')
+fplot(@(x) -0.5*x+1.5, [0,1], 'b')
+fplot(@(x) 1.5*x+2.5, [1,2], 'b')
+fplot(@(x) -3.5*x+1.5, [2,3], 'b')
+fplot(@(x) 3, [3,4], 'b')
+xlim([-2,4])
+hold off
+grid on
+legend({'g3(t)'},'Location','southwest')
+
+===============================================================
+
+
+
+
+
+
+
+
+
+

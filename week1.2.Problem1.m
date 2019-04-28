@@ -1,7 +1,7 @@
 % Problem 1 
 %xa
 figure(1)
-fplot(@(t) 0*t, [-2,0], 'b'), hold on
+fplot(@(x) 0*x, [-2,0], 'b'), hold on
 fplot(@(x) 1*x, [0,2], 'b')
 fplot(@(x) -x+4, [2,3], 'b')
 fplot(@(x) -2*x+7, [3,4], 'b')
