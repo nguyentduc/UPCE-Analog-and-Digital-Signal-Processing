@@ -174,11 +174,13 @@ xlim([-2,5])
 hold off
 grid on
 legend({'g3(t)'},'Location','southwest')
+
 =============================================================
 %Problem 8
 
 xa(t) = u(t+2)+0.5u(u+1)-2u(t-1.5)+0.5u(t-3)
 xb(t) = 1.5u(t+1)-2.5u(t)+u(t-1)
+
 =============================================================
 %Problem 9
 xa(t) is even xa(-t)=xa(t)
@@ -188,4 +190,35 @@ xd(t) is even xd(-t)=xd(t)
 xe(t) is odd xe(-t)=-xe(t)
 xf(t) is neither
 
+=============================================================
+%Problem 10
+
+a/x(t)=3cos(2t+pi/10)=3cos(2*pi*1/(2*pi)*t+pi/10)
+f0=1/(2*pi)
+T0=2*pi
+x(t+2pi)= 3cos(2*(t+2pi)t+pi/10)
+	= 3cos(2t+4pi+pi/10)
+	= 3cos(2t+pi/10)= x(t)
+=>x(t) is periodic
+
+b/x(t)= 2cos(sqrt(20)*t)= 2cos(2pi*sqrt(20)/(2pi)*t)
+f0=sqrt(20)/(2pi)
+T0=2pi/sqrt(20)
+x(t+2pi/sqrt(20))= 2cos(sqrt(20)*(t+2pi/sqrt(20)))
+		= 2cos(sqrt(20)*t +2pi)
+		= 2cos(sqrt(20)*t) = x(t)
+=>x(t) is periodic
+
+c/x(t)= 3cos(2t+pi/10)*u(t) is not periodic
+x(t) =	3cos(2t+pi/10), t>0
+	0, t<0
+
+d/x(t)=(cos(3t-pi/3))^2	= (1-cos(6t-pi/3))/2
+			= (1-cos(2pi*3/pi*t-pi/3))/2
+f0=3/pi
+T0=pi/3
+x(t+pi/3)=(1-cos(6(t+pi/3)-pi/3))/2
+	 =(1-cos(6t+2pi-pi/3))/2
+	 =(1-cos(6t-pi/3))/2=x(t)
+=>x(t) is periodic
 
